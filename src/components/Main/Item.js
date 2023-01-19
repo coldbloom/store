@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {Link} from "react-router-dom";
 import './Main.scss'
 
 function useHover() {
@@ -23,22 +24,30 @@ function useHover() {
 const Item = ({title, id, price}) => {
     const [ref, hovered] = useHover()
 
-    return (
-        <div
+    const openItem = () => {
 
-            className='m-4 p-2 flex flex-col items-center'
-            ref={ref}
-        >
-            <div className='item-img'>
-                {
-                    hovered
-                        ? <img src={`./clothes/${id}/2.jpg`} alt=""/>
-                        : <img src={`./clothes/${id}/1.jpg`} alt=""/>
-                }
-            </div>
-            <p>{title}</p>
-            <p>{price} ₽</p>
-        </div>
+    }
+
+    return (
+        <>
+            <Link to={""}>
+                <div
+                    onClick={() => openItem()}
+                    className='m-4 p-2 flex flex-col items-center'
+                    ref={ref}
+                >
+                    <div className='item-img'>
+                        {
+                            hovered
+                                ? <img src={`./clothes/${id}/2.jpg`} alt=""/>
+                                : <img src={`./clothes/${id}/1.jpg`} alt=""/>
+                        }
+                    </div>
+                    <p>{title}</p>
+                    <p>{price} ₽</p>
+                </div>
+            </Link>
+        </>
     );
 };
 
