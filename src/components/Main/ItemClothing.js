@@ -21,7 +21,7 @@ function useHover() {
     return [ref, hovered]
 }
 
-const Item = ({title, id, price}) => {
+const ItemClothing = ({title, id, price}) => {
     const [ref, hovered] = useHover()
 
     const openItem = () => {
@@ -30,7 +30,7 @@ const Item = ({title, id, price}) => {
 
     return (
         <>
-            <Link to={""}>
+            <Link to={`/item/${id}`}>
                 <div
                     onClick={() => openItem()}
                     className='m-4 p-2 flex flex-col items-center'
@@ -51,5 +51,5 @@ const Item = ({title, id, price}) => {
     );
 };
 
-export default Item;
+export default ItemClothing;
 

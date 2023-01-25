@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from "./Item";
+import ItemClothing from "./ItemClothing";
 import './Main.scss'
 
 const items = [
@@ -43,13 +43,18 @@ const items = [
         title: 'худи ZNY STAY OTHER',
         price: '10 000',
     },
+    {
+        id: '9',
+        title: 'худи ZNY MEME',
+        price: '10 000',
+    },
 ]
 
 const Main = () => {
     return (
         <div className='wrapper'>
             {items.map(item => (
-                <Item key={item.id} {...item}/>
+                <ItemClothing key={item.id} {...item}/>
             ))}
         </div>
     );
