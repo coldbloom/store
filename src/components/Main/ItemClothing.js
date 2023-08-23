@@ -37,26 +37,24 @@ const ItemClothing = ({title, id, price}) => {
     }
 
     return (
-        <>
-            <Link to={`/item/${id}`}>
-                <div
-                    onClick={() => openItem()}
-                    className='m-4 p-2 flex flex-col items-center'
-                    ref={ref ? ref : null}
-                >
-                    <div className='item-img'>
-                        {ref &&
-                            (
-                                hovered
-                                ? <img src={`./clothes/${id}/2.jpg`} alt=""/>
-                                : <img src={`./clothes/${id}/1.jpg`} alt=""/>
-                            )}
-                    </div>
-                    <p>{title}</p>
-                    <p>{price} ₽</p>
+        <Link to={`/item/${id}`}>
+            <div
+                onClick={() => openItem()}
+                className='m-4 p-2 flex flex-col items-center'
+                ref={ref ? ref : null}
+            >
+                <div className='item-img'>
+                    {ref &&
+                        (
+                            hovered
+                            ? <img src={`./clothes/${id}/2.jpg`} alt=""/>
+                            : <img src={`./clothes/${id}/1.jpg`} alt=""/>
+                        )}
                 </div>
-            </Link>
-        </>
+                <p>{title}</p>
+                <p>{price} ₽</p>
+            </div>
+        </Link>
     );
 };
 

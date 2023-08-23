@@ -1,0 +1,21 @@
+.header__logo {
+    background: left top no-repeat;
+    background-image: url("https://znyworldwide.com/catalog/view/theme/zny/img/logo.svg");
+    background-size: auto 100%;
+    width: 75%;
+}
+
+$size: 24px;
+$lineWidth: 2px;
+
+.burger {
+    width: $size;
+    height: $size;
+    position: relative;
+    cursor: pointer;
+}
+.burger span { width: 100%; height: $lineWidth; background-color: black; position: absolute; }
+
+.burger span:nth-child(1) { top: calc(($size / 3 * 1) - ($size / 3 / 2) - ($lineWidth / 2)); }
+.burger span:nth-child(2) { top: calc(($size / 3 * 2) - ($size / 3 / 2) - ($lineWidth / 2)); }
+.burger span:nth-child(3) { top: calc($size - ($size / 3 / 2) - ($lineWidth / 2)); }

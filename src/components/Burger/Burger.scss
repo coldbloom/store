@@ -1,0 +1,35 @@
+$width: 24px;
+$height: 24px;
+$line: 2px;
+
+.burger-menu {
+    width: $width;
+    height: $height;
+    position: relative;
+    cursor: pointer;
+}
+
+.line {
+    position: absolute;
+    height: $line;
+    width: 100%;
+    background: #000;
+    transition: 0.5s;
+}
+
+.line:nth-child(1) { top: calc(($height / 3 * 1) - ($height / 3 / 2) - ($line / 2)); }
+.line:nth-child(2) { top: calc(($height / 3 * 2) - ($height / 3 / 2) - ($line / 2)); }
+.line:nth-child(3) { top: calc($height - ($height / 3 / 2) - ($line / 2)); }
+
+
+.line:nth-child(1).clicked {
+    transform: translateY(calc($height / 3)) rotate(-45deg);
+}
+
+.line:nth-child(2).clicked {
+    opacity:0;
+}
+
+.line:nth-child(3).clicked {
+    transform: translateY(calc($height / 3 * -1)) rotate(45deg);
+}
